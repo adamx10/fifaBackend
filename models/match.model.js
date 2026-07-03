@@ -40,5 +40,9 @@ const Matchs = sequelize.define("match",{
         )
     }
 
-})
+},
+  {
+    timestamps: true}
+
+)
 export default Matchs;

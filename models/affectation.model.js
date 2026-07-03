@@ -32,5 +32,11 @@ const Affectation = sequelize.define("Affectation",{
 
 
 
-})
+},
+{
+      
+    timestamps: true
+}
+
+)
 export default Affectation;

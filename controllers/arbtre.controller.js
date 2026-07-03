@@ -8,10 +8,20 @@ async createArbitre (req , res , next){
     }catch(err){
         next(err)
     }
-    }
-
-
     
+    
+   
+
+};
+async getAllArbitre (req , res , next){
+  try{
+        const getAllArbitre = await Arbitre.findAll();
+        res.status(200).json(getAllArbitre);
+    }catch(err){
+        next(err)
+ 
+}
+}
 }
 
 

@@ -60,5 +60,10 @@ const Arbitres = sequelize.define("arbitre",{
         
     },
 
-})
+},
+{
+    
+    timestamps: true
+}
+)
 export default Arbitres;
