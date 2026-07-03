@@ -1,11 +1,11 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../config/database";
+import sequelize  from "../config/database.js";
 
 
 
 
 
-const Arbitres = define("arbitre",{
+const Arbitres = sequelize.define("arbitre",{
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,

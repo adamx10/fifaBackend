@@ -1,28 +1,7 @@
-// import express from "express";
-// import sequelize from "./config/database.js";
 
-// const app = express();
-
-// app.use(express.json());
-
-// async function start() {
-//   try {
-//     await sequelize.authenticate();
-//     console.log("✅ DB connected");
-
-//     app.listen(3000, () => {
-//       console.log(" server on");
-//     });
-
-//   } catch (err) {
-//     console.log(" DB error:", err.message);
-//   }
-// }
-
-// start();
 import express from "express";
 import sequelize from "./config/database.js";
-
+import "./models/index.js"
 const app = express();
 app.use(express.json());
 

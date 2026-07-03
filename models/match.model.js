@@ -1,10 +1,10 @@
-import sequelize from "../config/database";
+import sequelize from "../config/database.js";
 import { DataTypes } from "sequelize";
 
 
 
 
-const Matchs = define("match",{
+const Matchs = sequelize.define("match",{
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,

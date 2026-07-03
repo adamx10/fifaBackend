@@ -22,7 +22,7 @@ Affectation.belongsTo(Match, {
   foreignKey: "matchId",
 });
 
-module.exports = {
+export default  {
   Arbitre,
   Match,
   Affectation,
