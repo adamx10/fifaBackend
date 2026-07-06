@@ -52,7 +52,7 @@
 import { where } from 'sequelize';
 import Arbitres from '../models/arbitre.model.js'
 
-class CreatArbitesController {
+class ArbitesController {
 
     ArbiteGetAll = async (req, res) => {
         try {
@@ -132,4 +132,4 @@ deleteArbitre = async (req,res) =>{
 
 
 
-export default new CreatArbitesController();
+export default new ArbitesController();

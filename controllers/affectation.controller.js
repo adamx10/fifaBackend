@@ -1,7 +1,7 @@
 import Affectation from "../models/affectation.model.js";
 
 
-class CreatAffectationController {
+class AffectationController {
 
     createAffectation = async (req, res) => {
         try {
@@ -104,4 +104,4 @@ m
 
 }
 
-export default new CreatAffectationController();
+export default new AffectationController();

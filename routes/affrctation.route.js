@@ -1,14 +1,14 @@
 import express from "express";
-import CreatAffectationController from "../controllers/affectation.controller.js";
+import AffectationController from "../controllers/affectation.controller.js";
 import { validateAffectation } from "../middlewares/validate.middleware.js";
 
 const router = express.Router();
 
 
-router.get("/",validateAffectation, CreatAffectationController.getAllAffectations);
-router.get("/:id",validateAffectation, CreatAffectationController.getAffectationById);
-router.post("/", validateAffectation,CreatAffectationController.createAffectation);
-router.put("/:id",validateAffectation, CreatAffectationController.updateAffectation);
-router.delete("/:id",validateAffectation, CreatAffectationController.deleteAffectation);
+router.get("/",validateAffectation, AffectationController.getAllAffectations);
+router.get("/:id",validateAffectation, AffectationController.getAffectationById);
+router.post("/", validateAffectation,AffectationController.createAffectation);
+router.put("/:id",validateAffectation, AffectationController.updateAffectation);
+router.delete("/:id",validateAffectation, AffectationController.deleteAffectation);
 
 export default router;
