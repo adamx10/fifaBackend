@@ -40,7 +40,9 @@ class MatchController {
     getMatchById = async (req, res) => {
         try {
 
-            const match = await Match.findByPk(req.params.id);
+            const match = await Match.findByPk(req.params.id,{
+
+                });
 
             if (!match) {
                 return res.status(404).json({message: "Match not found"});
@@ -60,7 +62,7 @@ class MatchController {
     updateMatch = async (req, res) => {
         try {
 
-            const match = await Match.findByPk(req.params.id);
+            const match = await Match.findByPk(req.params.id,iclud);
 
             if (!match) {
                 return res.status(404).json({message: "Match not found"});

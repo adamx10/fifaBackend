@@ -8,7 +8,7 @@ const Matchs = sequelize.define("match",{
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,
-        autolncrement:true
+        autoIncrement:true
     },
     equipeDomicile:{
         type:DataTypes.STRING,
