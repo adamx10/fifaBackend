@@ -1,46 +1,42 @@
-
 classDiagram
-class Arbitre {
-  +int id
-  +string nom
-  +string prenom
-  +string nationalite
-  +string confederation
-  +string categorie
-  +int experience
-  +string statut
-  +getNomComplet() string
-  +estDisponible() bool
-  +changerStatut(statut) void
-  +listerAffectations() Affectation[]
-}
+    class Arbitre {
+        +Integer id
+        +String nom
+        +String prenom
+        +String nationalite
+        +Enum confederation
+        +Enum categorie
+        +Integer experience
+        +Enum statut
+    }
 
-class Match {
-  +int id
-  +string equipeDomicile
-  +string equipeExterieur
-  +string stade
-  +string villeHote
-  +date dateMatch
-  +string phase
-  +getResume() string
-  +listerArbitres() Arbitre[]
-  +affecterArbitre(arbitre, role) Affectation
-  +estComplet() bool
-}
+    class Match {
+        +Integer id
+        +String equipeDomicile
+        +String equipeExterieur
+        +String stade
+        +String villeHote
+        +DateTime dateMatch
+        +Enum phase
+    }
 
-class Affectation {
-  +int id
-  +int arbitreId
-  +int matchId
-  +string role
-  +getArbitre() Arbitre
-  +getMatch() Match
-  +modifierRole(role) void
-  +annuler() void
-}
+    class Affectation {
+        +Integer id
+        +Integer arbitreId
+        +Integer matchId
+        +Enum role
+    }
 
-Arbitre "1" --> "0..*" Affectation : possede
-Match "1" --> "0..*" Affectation : contient`
+    class User {
+        +Integer id
+        +String nom
+        +String email
+        +String password
+        +Enum role
+    }
 
-
+    Arbitre "1" --> "0.." Affectation : hasMany
+    Match "1" --> "0.." Affectation : hasMany
+    Affectation "0.." --> "1" Arbitre : belongsTo
+    Affectation "0.." --> "1" Match : belongsTo
+    Arbitre "0.." <--> "0.." Match : belongsToMany
