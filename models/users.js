@@ -1,10 +1,10 @@
-import { Sequelize } from "sequelize";
+import { sequelize } from "../config/database";
 import { DataTypes } from "sequelize";
 
-const Users =sequelize("users",{
+const User =sequelize("users",{
     id:{
         type:DataTypes.INTEGER,
-        primarykey:true,
+        primaryKey:true,
         autoIncrement:true
     },
     nom:{
@@ -14,6 +14,7 @@ const Users =sequelize("users",{
 
         email:{
             type:DataTypes.STRING,
+            unique:true,
             allowNull:false
 
         },
@@ -22,12 +23,12 @@ const Users =sequelize("users",{
             allowNull:false
 
         },
-        roles:{
+        role:{
             type:DataTypes.ENUM(
                 "admin",
                 "commissaire",
-                " arbitre",
-                " consultation"
+                "arbitre",
+                "consultation"
             )
         }
 
