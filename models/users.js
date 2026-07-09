@@ -1,7 +1,7 @@
 import { sequelize } from "../config/database";
 import { DataTypes } from "sequelize";
 
-const User =sequelize("users",{
+const User =sequelize.define("User",{
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,
@@ -9,7 +9,7 @@ const User =sequelize("users",{
     },
     nom:{
         type:DataTypes.STRING,
-        allowNull:true,
+        allowNull:false,
         },
 
         email:{
@@ -29,7 +29,10 @@ const User =sequelize("users",{
                 "commissaire",
                 "arbitre",
                 "consultation"
-            )
-        }
+            ),
+            allowNull:false
+        },
+      
 
 } )
+export default User

@@ -24,6 +24,7 @@ class MatchController {
             const matches = await Match.findAll();
 
             if (matches.length === 0) {
+             
                 return res.status(404).json({message: "No matches found"});
             }
 
