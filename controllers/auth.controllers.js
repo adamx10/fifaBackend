@@ -1,4 +1,4 @@
-import User from "../models/users";
+import User from "../models/users.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -24,9 +24,18 @@ class AuthController {
         });
         const {password:_,...userData}= user.toJSON();
         return res.status()
-    }}
+    }
+    catch(err){
+
+    }
 }
 
+
+}
+
+
+
+export const authController = new AuthController()
 
 
 

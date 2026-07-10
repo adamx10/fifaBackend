@@ -2,25 +2,25 @@ import express from "express";
 import sequelize from "./config/database.js";
 import "./models/index.js";
 
-import logger from "./middlewares/logger.middleware.js";
-import errorHandler from "./middlewares/error.middleware.js";
+// import errorHandler from "./middlewares/error.middleware.js";
 
-import arbitreRoutes from "./routes/arbitre.routes.js";
-import matchRoutes from "./routes/match.routes.js";
-import affectationRoutes from "./routes/affectation.routes.js";
+// import arbitreRoutes from "./routes/arbitre.route.js";
+// import matchRoutes from "./routes/match.route.js";
+// import affectationRoutes from "./routes/affrctation.route.js";
+import authRoutes from "./routes/auth.route.js";
 
-const app = express();
+// const app = express();
 
-app.use(express.json());
-
-app.use(logger);
-
-app.use("/arbitres", arbitreRoutes);
-app.use("/matchs", matchRoutes);
-app.use("/affectations", affectationRoutes);
+// app.use(express.json());
 
 
-app.use(errorHandler);
+// app.use("/arbitres", arbitreRoutes);
+// app.use("/matchs", matchRoutes);
+// app.use("/affectations", affectationRoutes);
+app.use("/auth", authRoutes);
+
+
+// app.use(errorHandler);
 
 
 async function startServer() {
