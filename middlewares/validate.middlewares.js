@@ -69,15 +69,33 @@ export const validation = (schema) => {
 
       next();
     } catch (error) {
-      console.log(error.message);
+      const errorStr = JSON.parse(error.message)
+      const errors = {}
+     
+      
+      const arr = errorStr?.map(e=>{
+        
+        errors[e?.path?.[0]] = e.message
+
+        
+      })
+      
+
+      return res.status(403).json({error:errors})
     }
   };
 };
 
+
+
 export const registerSchema = z.object({
-  name: z.string().minLength(4),
+  name: z.string().min(4),
   email: z.email(),
 
   password: z.string().min(8).max(32),
   role: z.enum(["admin", "commissaire", "arbitre", "consultation"]),
 });
+export const loginSchema = z.object({
+  email:z.email(),
+  password:z.string().min(8)
+})

@@ -9,19 +9,16 @@ import "./models/index.js";
 // import affectationRoutes from "./routes/affrctation.route.js";
 import authRoutes from "./routes/auth.route.js";
 
-// const app = express();
+const app = express();
 
-// app.use(express.json());
-
+app.use(express.json());
 
 // app.use("/arbitres", arbitreRoutes);
 // app.use("/matchs", matchRoutes);
 // app.use("/affectations", affectationRoutes);
 app.use("/auth", authRoutes);
 
-
 // app.use(errorHandler);
-
 
 async function startServer() {
   try {
@@ -30,14 +27,13 @@ async function startServer() {
 
     await sequelize.sync();
     console.log("Tables created");
-
-    app.listen(1010, () => {
-      console.log("Server running on port 1010");
-    });
-
   } catch (err) {
-    console.log("Error:", err.message);
+    console.log("DB connection warning:", err.message);
   }
+
+  app.listen(3000, () => {
+    console.log("Server running on port 3000");
+  });
 }
 
 startServer();
