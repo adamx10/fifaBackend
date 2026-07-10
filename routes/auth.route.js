@@ -6,4 +6,5 @@ const routes = express.Router();
 routes.post("/register",validation(registerSchema), authController.register);
 routes.post("/login",validation(loginSchema), authController.login);
 
+
 export default routes;
