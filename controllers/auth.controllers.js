@@ -72,6 +72,17 @@ class AuthController {
             return res.status(500).json({ message: err.message || "Server error" });
         }
     }
+    async me(req, res) {
+    try {
+        return res.status(200).json({
+            user: req.user,
+        });
+    } catch (err) {
+        return res.status(500).json({
+            message: err.message || "Server error",
+        });
+    }
+}
 }
 
 export const authController = new AuthController();
